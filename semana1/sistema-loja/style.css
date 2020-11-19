@@ -1,0 +1,105 @@
+html, body{
+    background-color: skyblue;
+    
+}
+
+img{
+    width: 8vh;
+    height: 4vw;
+
+}
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    background: tomato;
+    text-align: center;
+    color: white;
+    
+
+}
+
+.cabecalho{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 55px;
+    text-align: center;    
+    
+}
+
+.links{
+    text-align: center;
+    background-color: tomato;
+    font-size: 30px;
+    color: white;
+    height: 35px;
+    border: 1px solid gray;
+}
+
+.descricao{
+    margin-top: 25px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.redes-sociais{
+    font-size: 35px;
+    color: white;
+}
+
+.footer{
+    text-align: center;
+}
+
+.estoque{
+
+    background: skyblue;
+}
+
+.title-estoque{
+    font-size:55px;
+    text-align: center;
+
+}
+.link-estoque{
+    background-color: tomato;
+    text-align: center;
+}
+
+.controle-estoque{
+    font-size: 35px
+    
+}
+
+.add-produto{
+    background: skyblue;
+}
+
+.title-produtos{
+    font-size: 55px;
+    text-align: center;
+}
+
+.link-produto{
+    background-color: tomato;
+    text-align: center;
+}
+
+.funcionarios{
+    background: skyblue;
+}
+
+.link-funcionarios{
+    background-color: tomato;
+    text-align: center;
+}
+
+.title-funcionarios{
+    font-size: 55px;
+    text-align: center;
+}
