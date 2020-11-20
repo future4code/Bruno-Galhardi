@@ -1,0 +1,81 @@
+html, body{
+    background: white;
+}
+
+h1{
+    text-align: center;
+    font-size: 25px;
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.links{
+    text-align: right;
+    margin-right: 15px;
+    font-size: 30px;
+    color: violet;
+    padding-top: 10px;
+    
+
+
+}
+
+.links>a:hover{
+    background-color: skyblue;
+}
+
+
+
+.logob{  
+    position: relative;
+    right: 1350px;
+    width: 100px;
+    
+    
+}
+
+.atributos{
+    text-align: center;
+    font-size: 40px;
+    color: skyblue;
+    margin-top: 15vh;
+}
+
+.imageindex{
+   text-align: center;
+   padding-top: 85px;
+   
+}
+
+.descricaoindex{
+    text-align: center;
+    font-size: 35px;
+    padding-top:40px;
+
+}
+
+.direitosreservados{
+    font-size: 18px;
+    text-align: center;
+    padding-top: 150px;
+    font-style: italic;
+    
+}
+
+.rindex{
+    position: relative;
+    width: 15px;
+    
+}
+
+.quemsoueu{
+    padding-top: 100px;
+    margin-left: 45px;
+    font-size: 25px;
+    text-align: left;
+}
