@@ -33,7 +33,7 @@ h1{
 
 .logob{  
     position: relative;
-    right: 1350px;
+    right: 1500px;
     width: 100px;
     
     
@@ -54,15 +54,16 @@ h1{
 
 .descricaoindex{
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
     padding-top:40px;
+    text-justify: auto;
 
 }
 
 .direitosreservados{
     font-size: 18px;
     text-align: center;
-    padding-top: 150px;
+    padding-top: 95px;
     font-style: italic;
     
 }
@@ -78,4 +79,55 @@ h1{
     margin-left: 45px;
     font-size: 25px;
     text-align: left;
+}
+
+.nome{
+    padding-top: 100px;
+    margin: 10px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.email1{
+    margin-top: 10px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.msg{
+    margin-top: 10px;
+    font-size: 25px;
+    text-align: center;
+    
+    
+}
+
+.instagram{
+    height: 35px;
+    width: 42px;
+    
+   
+}
+
+.face{
+    height: 30px;
+    width: 30px;
+    
+
+}
+
+.midias{
+    font-size: 28px;
+    margin: 25px;
+    
+}
+.nomesprojeto{
+    font-size: 25px;
+}
+
+.h2projetos{
+    font-size: 35px;
+    color: skyblue;
+    padding-bottom: 25px;
+
 }
