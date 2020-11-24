@@ -1,0 +1,66 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    color: white;
+}
+
+#main-container{
+    
+}
+
+#top-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 4vh;
+    text-align: center;
+    
+    
+    
+
+}
+
+.green-background {
+    display: flex;
+    background-color: green;
+    width: 18%;
+    height: 4vh;
+    font-size: 15px;
+    
+    
+    
+}
+
+.yellow-background {
+    display: flex;
+    background-color: yellow;
+    width: 82%;
+    height: 4vh;
+    font-size: 15px;
+    
+   
+}
+
+.pink-background {
+    background-color: fuchsia;
+}
+
+.blue-background {
+    background-color: blue;
+}
+
+.red-background {
+    background-color: red;
+}
+
+.lightgreen-background {
+    background-color: lightgreen;
+}
+
+.purple-background {
+    background-color: purple;
+}
