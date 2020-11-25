@@ -7,30 +7,113 @@ body {
     color: white;
 }
 
+#main-container{
+    display: grid;
+}
+
+#middle-container{
+    display: grid;
+    justify-content: space-between;
+}
+
+#top-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    height: 5vh;
+    
+}
+
+#vertical-middle-container{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-column: 8 / 7;
+}
+
+#image{
+    display: grid;
+    align-items: center;
+}
+
+#extra{
+    display: grid;
+}
+
+#blank{
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
 .green-background {
     background-color: green;
+    display: grid;
+    height: 5vh;
+    width: 20vw;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+
 }
 
 .yellow-background {
     background-color: yellow;
+    display: grid;
+    height: 5vh;
+    width: 80vw;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
 }
 
 .pink-background {
     background-color: fuchsia;
+    display: grid;
+    height: 65vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
 }
 
 .blue-background {
+    display: grid;
     background-color: blue;
+    height: 20vh;
+    width: 30vw;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
 }
 
 .red-background {
     background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 15vw;
+    font-size: 15px;
+    
 }
 
 .lightgreen-background {
     background-color: lightgreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 15vw;
+    font-size: 15px;
 }
 
 .purple-background {
     background-color: purple;
+    display: grid;
+    height: 5vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
 }
