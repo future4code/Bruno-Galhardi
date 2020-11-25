@@ -1,0 +1,179 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+#main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    
+}
+
+#item{
+   display: flex;
+}
+
+div {
+    border: 1px solid black;
+}
+
+#first-block {
+    background-color: red;
+    height: 6vh;
+    width: 100vw;
+    justify-content: space-between;
+    display: flex;
+}
+
+
+.blue-block {
+    background-color: blue;
+    display: flex; 
+    height: 12vh;
+    width: 33vw;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vw;
+   
+
+
+}
+
+
+
+.yellow-block {
+    background-color: yellow;
+    display: flex;
+    height: 12vh;
+    width: 32vw;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vw;
+    
+    
+}
+
+.green-block {
+    background-color: green;
+    display: flex;   
+    height: 12vh;
+    width: 33vw;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vw;
+
+    
+}
+
+.black-block {
+    background-color: black;
+    display: flex;
+    color: white;
+    width: 49vw;
+    height: 24vh;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.7vh;
+}
+
+.white-block {
+    background-color: white;
+    display: flex;
+    width: 33%;
+    height: 12vh;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vw;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+   
+    .blue-block{
+        width: 48%;
+        height: 9vh;
+        
+    }
+
+    .yellow-block{
+        width: 48%;
+        height: 9vh;
+
+    }
+
+    .green-block{
+        width: 90%;
+        height: 9vh;
+        margin: 3vh;
+    }
+
+    .black-block{
+        width: 45%;
+        height: 30vh;
+
+    }
+
+    .white-block{
+        width: 48%;
+        height: 9vh;
+    }
+
+    #white11{
+        width: 95%;
+        height: 9vh;
+        margin: 5vw;
+    }
+
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px) {
+    .blue-block{
+        width: 85%;
+        height: 12vh;
+        margin: 4vw;
+    }
+
+    .yellow-block{
+        width: 85%;
+        height: 12vh;
+        margin: 4vw;
+    }
+
+    .green-block{
+        width: 85%;
+        height: 12vh;
+        margin: 4vw;
+    }
+
+    .black-block{
+        width: 85%;
+        height: 12vh;
+        margin: 4vw;
+    }
+    
+
+    .white-block{
+        width: 85%;
+        height: 12vh;
+        margin: 4vw;
+    }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
