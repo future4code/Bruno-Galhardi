@@ -1,6 +1,7 @@
-import React from 'react';
-import './App.css';
-import Post from './components/Post/Post';
+
+import React from "react";
+
+
 
 class App extends React.Component {
   render() {
@@ -27,3 +28,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+
