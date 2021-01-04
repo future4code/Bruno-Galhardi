@@ -5,25 +5,52 @@ import Etapa3 from "./components/Etapa3"
 import Final from "./components/Final"
 import React from "react";
 
-export default class App extends React.Component{
-  render(){
+export default class App extends React.Component {
+
+  state = {
+    etapa: 1,
+  }
+
+  renderizaEtapa = () => {
+    switch (this.state.etapa) {
+      case 1:
+        return <Etapa1 />
+      case 2:
+        return <Etapa2 />
+      case 3:
+        return <Etapa3 />
+      case 4:
+        return <Final />
+    }
+
+  }
+
+
+  irParaProximaEtapa = () =>{
+    this.setState({etapa: this.state.etapa + 1})
+  }
+
+
+  render() {
     return (
       <div >
-        <Etapa2/>
+
+        {this.renderizaEtapa()}
+
         <div>
-          <button>Próxima etapa</button>
+          <button onClick={this.irParaProximaEtapa}>Próxima etapa</button>
         </div>
 
       </div>
     );
 
-
-
-
   }
-  
 
-  
+
+
+
+
 }
+
 
 
