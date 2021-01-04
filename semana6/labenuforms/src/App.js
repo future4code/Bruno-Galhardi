@@ -9,10 +9,11 @@ export default class App extends React.Component{
   render(){
     return (
       <div >
-        <Etapa1/>
+        <Etapa2/>
         <div>
           <button>Próxima etapa</button>
         </div>
+
       </div>
     );
 
