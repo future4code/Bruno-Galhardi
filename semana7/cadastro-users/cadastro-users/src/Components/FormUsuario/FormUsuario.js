@@ -48,6 +48,7 @@ class FormUsuario extends React.Component {
         request
           .then((resposta) => {
             alert("Usuário criado com sucesso!!!");
+            this.setState({inputValueNome:''})
           })
           .catch((erro) => {
             alert("Erro ao criar Usuário");
