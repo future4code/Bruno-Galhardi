@@ -3,8 +3,19 @@ import axios from "axios"
 import styled from "styled-components"
 import { baseUrl, axiosConfig } from "./Parameters"
 
+const BtnDel = styled.button`
+  background-color:white;
+  margin:15px;
+  border: 2px solid black;
+  border-radius:8px;
+  width:5vw;
+  color:red;
 
+`
+const BtnDetail = styled.button`
+    margin:15px;
 
+`
  
 class App extends React.Component{
   state={
@@ -52,7 +63,13 @@ class App extends React.Component{
   render(){
     const listaRenderizada = this.state.listaPlaylist.map((playlist)=>{
       return(
-        <p>{playlist.name}</p>
+        <p>
+          <BtnDetail>Playlist Detail</BtnDetail>
+          {playlist.name} 
+          <BtnDel>X</BtnDel>
+        </p>
+        
+        
       )
     })
   return (
@@ -70,8 +87,9 @@ class App extends React.Component{
       <div>
 
         <h2>Lista de Playlist</h2>
-
+        
         {listaRenderizada}
+        
 
       </div>
 
