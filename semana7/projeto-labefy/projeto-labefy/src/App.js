@@ -2,6 +2,7 @@ import React from "react"
 import axios from "axios"
 import styled from "styled-components"
 import { baseUrl, axiosConfig } from "./Parameters"
+import AddMusica from './Components/AddMusica'
 
 const BtnDel = styled.button`
   background-color:white;
@@ -108,6 +109,12 @@ class App extends React.Component{
         
         {listaRenderizada}
         
+
+      </div>
+
+      <div>
+
+        <AddMusica/>
 
       </div>
 
