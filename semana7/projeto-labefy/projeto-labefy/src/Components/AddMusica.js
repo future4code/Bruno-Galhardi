@@ -1,6 +1,7 @@
 import React from "react"
 import axios from "axios"
 import styled from "styled-components"
+import { baseUrl, axiosConfig } from "../Parameters"
 
 const BoxAddMusic = styled.div`
     display: flex;
@@ -13,37 +14,35 @@ const BoxAddMusic = styled.div`
 
 
 class AddMusica extends React.Component{
-    state = {
-        inputName:'',
-        inputArtist:'',
-        url:''
-    }
-
-     createMusic = () =>{
-        const body  = {
-            name: this.state.inputName,
-            artist: this.state.inputName,
-            url:this.state.url
-
-        }
-     }
     
+     /* pegarNomeMusic =(e) =>{
+        this.setState({inputName: e.target.value})
 
+      }
 
+      pegarNomeArtist =(e) =>{
+        this.setState({inputArtist: e.target.value})
+        
+      }
+
+      pegarNomeUrl =(e) =>{
+        this.setState({inputUrl: e.target.value})
+        
+      } */
 
     render(){
         return(
             <BoxAddMusic>
 
                 <label>Nome da musica:</label>
-                <input></input>
-                <label>Nome da musica:</label>
-                <input></input>
-                <label>Nome da musica:</label>
-                <input></input>
+                <input onChange={this.pegarNomeMusic} value={this.props.inputName}></input>
+                <label>Artista:</label>
+                <input onChange={this.pegarNomeArtist} value={this.props.inputArtist}></input>
+                <label>URL da musica:</label>
+                <input onChange={this.pegarNomeUrl} value={this.props.inputUrl}></input>
                 <label>Adicionar na playlist:</label>
-                <select></select>
-      
+                
+
             </BoxAddMusic>
         )
     }
