@@ -8,12 +8,21 @@ const BtnDel = styled.button`
   margin:15px;
   border: 2px solid black;
   border-radius:8px;
-  width:5vw;
+  width:2vw;
   color:red;
 
 `
 const BtnDetail = styled.button`
     margin:15px;
+
+`
+
+const BtnCriar = styled.button`
+  background-color:blue;
+  color:white;
+  width:3vw;
+  height:3vh;
+  margin-left:5px;
 
 `
  
@@ -57,16 +66,25 @@ class App extends React.Component{
     this.getAllPlaylist()
   }
 
-  
+  delPlaylist = (id) =>{
+    axios.delete(`${baseUrl}/${id}`, axiosConfig)
+    .then((res)=>{
+      alert('Playlist deletada com sucesso!')
+      this.getAllPlaylist()
+    }).catch((err)=>{
+      alert('Erro ao deletar Playlist')
+    })
+  }
  
  
   render(){
     const listaRenderizada = this.state.listaPlaylist.map((playlist)=>{
+      
       return(
         <p>
           <BtnDetail>Playlist Detail</BtnDetail>
           {playlist.name} 
-          <BtnDel>X</BtnDel>
+          <BtnDel onClick={()=> {this.delPlaylist(playlist.id)}}>X</BtnDel>
         </p>
         
         
@@ -79,7 +97,7 @@ class App extends React.Component{
         <h1>Crie suas Playlist</h1>
         <label>Coloque o nome da sua Playlist:</label>
         <input onChange={this.pegarNomePlaylist} value={this.state.inputNamePlaylist}></input>
-        <button onClick={this.createPlaylist}>Criar</button>
+        <BtnCriar onClick={this.createPlaylist}>Criar</BtnCriar>
 
       </div>
         
