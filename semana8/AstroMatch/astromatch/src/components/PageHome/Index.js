@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import Like from "../img/Like.png";
-import Dislike from "../img/Dislike.png";
-import TelaMatches from './TelaMatches';
+
+
 
 const MainDiv = styled.div`
  width:100vw;
@@ -16,8 +15,8 @@ const BoxProfiles = styled.div`
   border-radius:5px;
   flex-direction: column;
   text-align: center;
-  height: 60%;
-  width: 20%;
+  height: 62%;
+  width: 22%;
   align-items: center;
   margin-left: 40%;
   margin-top: 10%;
@@ -39,9 +38,10 @@ const DivBtn = styled.div`
     
 `
 const ImgPerfil = styled.img`
-    height:85%;
-    width:75%;
+    height:60%;
+    width:60%;
     align-items:center;
+   
     
 `
 
@@ -50,8 +50,12 @@ const BtnMatchs =styled.button`
     z-index:-1;
     right: 1px;
 `
+const BoxImgPerfil = styled.div`
+    width:75%;
+    height:75%;
+`
 
-export default function Home() {
+export default function PageHome() {
 
     useEffect(() => {
         getProfileChoose();
@@ -65,13 +69,38 @@ export default function Home() {
         .get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person')
         .then((response)=>{
             setPerfil(response.data.profile)
-            console.log(perfil)
+            //console.log(perfil)
         })
         .catch((err)=>{
-            console.log(err)
+            //console.log(err)
         })
         
 
+    }
+
+    useEffect(() => {
+      choosePerson();
+    }, []);
+
+    
+    const [pegaPessoa, setPegaPessoa] = useState({});
+    const [pegaId, setPegaId] = useState('')
+    const [pegaChoice, setPegaChoice] = useState(true)
+
+    const choosePerson = (id) =>{
+      const body = {
+        "id": `${setPegaId}`,
+	      "choice": true
+      }
+      axios
+      .post('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/bruno/choose-person',body)
+      .then((response)=>{
+        getProfileChoose()
+        console.log(response)
+      })
+      .catch((err)=>{
+        console.log('Erro ao escolher',err)
+      })
     }
     
   return (
@@ -86,24 +115,26 @@ export default function Home() {
             
         
 
-            <div>
+            <BoxImgPerfil>
                 <ImgPerfil src={perfil.photo}/> 
-            </div>
+            </BoxImgPerfil>
 
             <div>
                 <p>{perfil.name}, {perfil.age}</p>
                 <p>{perfil.bio}</p>
 
+                <button>Dislike</button>
+                <button onClick= {choosePerson}>Like</button>
+                
+
             </div>
 
-        
-       
-        <DivBtn>
-            
-          <ImgButtons src={Dislike} />
-          <ImgButtons src={Like} />
           
-        </DivBtn>
+            
+          {/* <ImgButtons src={Dislike} />
+          <ImgButtons src={like} />  */}
+          
+        
 
       </BoxProfiles>
 

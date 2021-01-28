@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import styled from 'styled-components'
-import Home from './components/Home'
-import TelaMatches from './components/TelaMatches'
+//import axios from 'axios'
+//import styled from 'styled-components'
+import PageHome from './components/PageHome/Index'
+//import PageMatch from './components/PageMatch/Index'
 
 export default function App(){
   return (
     <div>
       <div>
-        <Home/>
+        <PageHome/>
       </div>
 
-      <div>
-        <TelaMatches/>
+     {/*  <div>
+        <PageMatch/>
       </div>
-
+ */}
 
 
     </div>

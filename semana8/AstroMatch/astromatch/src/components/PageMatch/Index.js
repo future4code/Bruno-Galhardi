@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import Home from './Home'
+
 
 const MainDiv = styled.div`
  width:100vw;
@@ -22,7 +22,7 @@ const BoxMatches = styled.div`
   
 `;
 
-export default function TelaMatches() {
+export default function PageMatch() {
 
     useEffect(() => {
         getMatchs();
