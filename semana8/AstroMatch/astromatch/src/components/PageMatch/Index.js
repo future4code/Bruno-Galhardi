@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import PageHome from '../PageHome/Index';
 
 
 const MainDiv = styled.div`
@@ -24,16 +25,17 @@ const BoxMatches = styled.div`
 
 export default function PageMatch() {
 
-    useEffect(() => {
-        getMatchs();
-      }, []);
+    
+  useEffect(() => {
+    getMatchs();
+  }, []);
 
 
-    const [Matchs, setMatchs] = useState({})
+    const [Matchs, setMatchs] = useState([])
 
     const getMatchs = () =>{
         axios
-        .get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/matches')
+        .get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/bruno-vallim/matches')
         .then((response)=>{
             setMatchs(response.data.matches)
             console.log(Matchs)
@@ -42,8 +44,22 @@ export default function PageMatch() {
             console.log(err)
         })
         
-
     }
+
+    const delMatch = () =>{
+      axios
+      .put('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/bruno-vallim/clear')
+      .then((response)=>{
+        alert('voce apagou seu amorzinho <3')
+      })
+      .catch((err)=>{
+        alert('Erro ao apagar')
+      })
+    }
+
+    
+
+    
 
   return (
 
@@ -51,9 +67,24 @@ export default function PageMatch() {
 
       <BoxMatches>
         <h2>Todos matches</h2>
+        {Matchs.map((pessoa)=>{
+          return(
+            <div>
+            <img src={pessoa.photo}/>
+            <p>{pessoa.name}</p>
+            </div>
+          ) 
+            
+
+        })}
+
+        <button onClick={delMatch}>Clear</button>
 
       </BoxMatches>
+
+      
 
     </MainDiv>
   );
 }
+
