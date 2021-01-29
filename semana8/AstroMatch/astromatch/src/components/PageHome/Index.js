@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import like from '../../img/Like.png'
+import dislike from '../../img/Dislike.png'
 
 
 
 
 const MainDiv = styled.div`
- width:100vw;
- height:100vh;
- background-color:#f0fff0;
+
+ height:78vh;
+ text-align:center;
+
 `;
 
 const ContainerProfiles = styled.div`
   display: flex;
-  border: 1px solid black;
   border-radius:6px;
   flex-direction: column;
   text-align: center;
-  height: 63%;
-  width: 22%;
+  height: 100%; 
   align-items: center;
-  margin-left: 40%;
-  margin-top: 10%;
+  
   
 `;
 
@@ -36,8 +36,8 @@ const TextoP = styled.p`
 `
   
 const ImgPerfil = styled.img`
-    height:35vh;
-    width:18vw;
+    height:50vh;
+    width:100%;
     align-items:center;
     display:flex;
     margin: auto;
@@ -47,12 +47,21 @@ const ImgPerfil = styled.img`
 const BtnLikes = styled.button`
   align-self:center;
   margin:10px;
-  width:3vw;
-  height:3vh;
-  border-radius:15px;
-  
-  
-  
+  border:none;
+  cursor: pointer;
+
+  &:focus{
+    outline:none;
+  }
+  `
+
+  const BoxInfos = styled.div`
+  height:100%;
+  `
+
+  const ImgBtn = styled.img`
+    height:50px;
+    width:50px;
   `
 
 export default function PageHome() {
@@ -69,10 +78,10 @@ export default function PageHome() {
         .get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/bruno-vallim/person')
         .then((response)=>{
             setPerfil(response.data.profile)
-            //console.log(perfil)
+            
         })
         .catch((err)=>{
-            //console.log(err)
+            console.log(err)
         })
         
 
@@ -111,21 +120,25 @@ export default function PageHome() {
         <h1>Astromatch</h1>
                  
             {perfil && 
-              <div>
+              <BoxInfos>
                   <ImgPerfil src={perfil.photo}/> 
-                  <hr></hr>
+                  
                   <H3>{perfil.name}, {perfil.age}</H3>
                   
                   <TextoP>{perfil.bio}</TextoP>
 
-                  <BtnLikes onClick= {()=> choosePerson(false, perfil.id)}>X</BtnLikes>
-                  <BtnLikes onClick= {()=> choosePerson(true, perfil.id)}>♥</BtnLikes>
+                  
                           
-            </div>         
+            </BoxInfos>         
             }
                   
       </ContainerProfiles>
-
+                  <BtnLikes onClick= {()=> choosePerson(false, perfil.id)}>
+                    <ImgBtn src={dislike}/>
+                    </BtnLikes>
+                  <BtnLikes onClick= {()=> choosePerson(true, perfil.id)}>
+                    <ImgBtn src={like}/>
+                    </BtnLikes>
     </MainDiv>
   );
 }

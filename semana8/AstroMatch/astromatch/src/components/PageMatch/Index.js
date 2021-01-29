@@ -5,21 +5,22 @@ import styled from "styled-components";
 
 
 const MainDiv = styled.div`
- width:100vw;
- height:100vh;
+  /* width:100vw; */
+ /* height:80%; */
 `;
 
 const ContainerMatches = styled.div`
   display: flex;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius:5px;
   flex-direction: column;
   text-align: center;
-  height: 60%;
-  width: 20%;
+  height: 100%;
+  /* width: 20%; */
   align-items: center;
-  margin-left: 40%;
-  margin-top: 10%;
+  /* margin-left: 40%;
+  margin-top: 10%; */
+  
   
 `;
 
@@ -27,22 +28,22 @@ const BoxMatchs = styled.div`
     display:flex;
     align-items:center;
     text-align:center;
-    width:10vw;
-    height:10vh;
-    margin-right:0px;
+    width:100%;
+  
     `
 
 const ImgMatches = styled.img`
   width:80px;
   height:80px;
-  margin-left:-70px;
   padding:10px;
+  border-radius:50%;
   
 `
 
 const BtnDel = styled.button`
   display:flex;
-  margin-top:175px;
+  
+  
   
 `
 
