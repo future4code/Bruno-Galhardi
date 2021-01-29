@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import PageMatch from '../PageMatch/Index'
+
 
 
 
 const MainDiv = styled.div`
  width:100vw;
  height:100vh;
+ background-color:#f0fff0;
 `;
 
-const BoxProfiles = styled.div`
+const ContainerProfiles = styled.div`
   display: flex;
   border: 1px solid black;
-  border-radius:5px;
+  border-radius:6px;
   flex-direction: column;
   text-align: center;
-  height: 62%;
+  height: 63%;
   width: 22%;
   align-items: center;
   margin-left: 40%;
@@ -24,37 +25,35 @@ const BoxProfiles = styled.div`
   
 `;
 
-const ImgButtons = styled.img`
-  height: 50px;
-  width: 50px;
-  padding:20px;
-  padding-top:30px;
-  
-`;
+const H3 = styled.h3`
+  text-align:left;
+  margin-left: 20px;
+`  
 
-const DivBtn = styled.div`
-    display:flex;
-    padding-top:100%;
-    
-    
+const TextoP = styled.p`
+  text-align:left;
+  margin-left: 20px;
 `
+  
 const ImgPerfil = styled.img`
-    height:60%;
-    width:60%;
+    height:35vh;
+    width:18vw;
     align-items:center;
+    display:flex;
+    margin: auto;
    
     
 `
-
-const BtnMatchs =styled.button`
-    position: relative;
-    z-index:-1;
-    right: 1px;
-`
-const BoxImgPerfil = styled.div`
-    width:75%;
-    height:75%;
-`
+const BtnLikes = styled.button`
+  align-self:center;
+  margin:10px;
+  width:3vw;
+  height:3vh;
+  border-radius:15px;
+  
+  
+  
+  `
 
 export default function PageHome() {
 
@@ -85,10 +84,6 @@ export default function PageHome() {
       };
     }, [perfil]);
 
-    
-    /* const [pegaPessoa, setPegaPessoa] = useState({});
-    const [pegaId, setPegaId] = useState('')
-    const [pegaChoice, setPegaChoice] = useState(true) */
 
     const choosePerson = (value,id) =>{
       const body = {
@@ -111,27 +106,25 @@ export default function PageHome() {
   return (
     <MainDiv>
         
-      <BoxProfiles>
-
-         
+      <ContainerProfiles>
 
         <h1>Astromatch</h1>
-
-            
-        
+                 
             {perfil && 
               <div>
                   <ImgPerfil src={perfil.photo}/> 
-                  <h3>{perfil.name}, {perfil.age}</h3>
-                  <p>{perfil.bio}</p>
+                  <hr></hr>
+                  <H3>{perfil.name}, {perfil.age}</H3>
+                  
+                  <TextoP>{perfil.bio}</TextoP>
 
-                  <button>Dislike</button>
-                  <button onClick= {()=> choosePerson(true, perfil.id)}>Like</button>
+                  <BtnLikes onClick= {()=> choosePerson(false, perfil.id)}>X</BtnLikes>
+                  <BtnLikes onClick= {()=> choosePerson(true, perfil.id)}>♥</BtnLikes>
                           
             </div>         
             }
                   
-      </BoxProfiles>
+      </ContainerProfiles>
 
     </MainDiv>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import PageHome from '../PageHome/Index';
+
 
 
 const MainDiv = styled.div`
@@ -9,7 +9,7 @@ const MainDiv = styled.div`
  height:100vh;
 `;
 
-const BoxMatches = styled.div`
+const ContainerMatches = styled.div`
   display: flex;
   border: 1px solid black;
   border-radius:5px;
@@ -22,6 +22,29 @@ const BoxMatches = styled.div`
   margin-top: 10%;
   
 `;
+
+const BoxMatchs = styled.div`
+    display:flex;
+    align-items:center;
+    text-align:center;
+    width:10vw;
+    height:10vh;
+    margin-right:0px;
+    `
+
+const ImgMatches = styled.img`
+  width:80px;
+  height:80px;
+  margin-left:-70px;
+  padding:10px;
+  
+`
+
+const BtnDel = styled.button`
+  display:flex;
+  margin-top:175px;
+  
+`
 
 export default function PageMatch() {
 
@@ -38,7 +61,7 @@ export default function PageMatch() {
         .get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/bruno-vallim/matches')
         .then((response)=>{
             setMatchs(response.data.matches)
-            console.log(Matchs)
+            
         })
         .catch((err)=>{
             console.log(err)
@@ -65,22 +88,23 @@ export default function PageMatch() {
 
     <MainDiv>
 
-      <BoxMatches>
-        <h2>Todos matches</h2>
+      <ContainerMatches>
+        <h2>Seus matches</h2>
         {Matchs.map((pessoa)=>{
           return(
-            <div>
-            <img src={pessoa.photo}/>
-            <p>{pessoa.name}</p>
-            </div>
+            <BoxMatchs>
+            <ImgMatches src={pessoa.photo}/>
+            {pessoa.name}
+            
+            </BoxMatchs>
           ) 
             
 
         })}
 
-        <button onClick={delMatch}>Clear</button>
+        <BtnDel onClick={delMatch}>Limpar Matchs</BtnDel>
 
-      </BoxMatches>
+      </ContainerMatches>
 
       
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-//import axios from 'axios'
 import styled from 'styled-components'
 import PageHome from './components/PageHome/Index'
 import PageMatch from './components/PageMatch/Index'
@@ -13,8 +12,8 @@ export default function App(){
   }
 
 const ContainerApp = styled.div`
-    width:30vw;
-    height:95vh;
+    width:2vw;
+    height:2vh;
 
 
 
@@ -22,19 +21,14 @@ const ContainerApp = styled.div`
 
 
   return (
+    
     <ContainerApp>
-      <button onClick={mudaPagina}>Home</button>
+      
+      <button onClick={mudaPagina}>Home</button> 
+      
       {changePage ? <PageHome/> : <PageMatch/> }
 
-    {/*   <div>
-        <PageHome/>
-      </div>
-
-        <div>
-        <PageMatch/>
-      </div> */} 
       
-
 
     </ContainerApp>
   );
