@@ -1,13 +1,13 @@
 import React from 'react';
 import HomePage from '../Pages/HomePage/HomePage';
-import ErrorPage from '../Components/ErroPage';
+import ErroPage from '../Components/ErroPage/ErroPage';
 import LoginPage from '../Pages/LoginPage/LoginPage';
 import CreateTripPage from '../Pages/CreateTripPage/CreateTripPage';
 import FormPage from '../Pages/FormPage/FormPage';
 import ListTripsPage from '../Pages/ListTripsPage/ListTripsPage';
 import TripDetailsPage from '../Pages/TripDetailsPage/TripDetailsPage';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import Header from '../Components/Header'
+import Header from '../Components/Header/Header'
 
     
 
@@ -43,7 +43,7 @@ export default function Router() {
           </Route>
 
           <Route>
-            <ErrorPage />
+            <ErroPage />
           </Route>
 
         </Switch>

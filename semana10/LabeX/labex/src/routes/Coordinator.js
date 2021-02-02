@@ -1,8 +1,8 @@
-export const goToHomePage = (history) => {
-  history.push("/");
+export const goToPage = (history, path) => {
+  history.push(path);
 };
 
-export const goToLoginPage = (history) => {
+/* export const goToLoginPage = (history) => {
   history.push("/login");
 };
 
@@ -21,3 +21,4 @@ export const goToListTripsPage = (history) => {
 export const goToTripDetailsPage = (history) => {
   history.push("/trips/details");
 };
+ */
