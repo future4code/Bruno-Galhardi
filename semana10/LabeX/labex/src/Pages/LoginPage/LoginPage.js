@@ -45,16 +45,16 @@ const LoginPage = () => {
   })
 
   return (
-    <div className='containerLogin'>
+    <div className='mainContainerLogin'>
       <h1>Login Page</h1>
-        <div className='mainContainerLogin'>
-          <div className='inputTest'>
-            <label>E-mail</label>
+        <div className='containerLogin'>
+          <div className='boxLogin'>
+            <label>E-mail:</label>
             <input value={email} onChange={onChangeEmail} placeholder="E-mail" />
           </div>
           
-          <div className='inputTest'>
-            <label>Password</label>
+          <div className='boxLogin'>
+            <label>Password:</label>
             <input
             value={password}
             onChange={onChangePassword}
@@ -63,7 +63,7 @@ const LoginPage = () => {
           />
           </div>
           
-      <button onClick={login}>Login</button>
+            <button onClick={login}>Login</button>
 
         </div>
 
