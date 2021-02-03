@@ -6,9 +6,10 @@ import CreateTripPage from '../Pages/CreateTripPage/CreateTripPage';
 import FormPage from '../Pages/FormPage/FormPage';
 import ListTripsPage from '../Pages/ListTripsPage/ListTripsPage';
 import TripDetailsPage from '../Pages/TripDetailsPage/TripDetailsPage';
+import AdmPage from '../Pages/AdmPage/AdmPage'
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Header from '../Components/Header/Header'
-
+import HeaderAdm from '../Components/HeaderAdm/HeaderAdm'
     
 
 export default function Router() {
@@ -19,10 +20,12 @@ export default function Router() {
 
         <Switch>
           <Route exact path="/">
+            <Header/>
             <HomePage />
           </Route>
 
           <Route exact path={"/login"}>
+            <Header/>
             <LoginPage />
           </Route>
 
@@ -40,6 +43,11 @@ export default function Router() {
 
           <Route exact path={"/trips/details"}>
             <TripDetailsPage />
+          </Route>
+
+          <Route exact path={"/admin"}>
+            <HeaderAdm/>
+            <AdmPage/>
           </Route>
 
           <Route>

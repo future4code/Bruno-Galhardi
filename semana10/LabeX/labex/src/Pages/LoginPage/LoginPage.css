@@ -1,0 +1,29 @@
+
+.containerLogin{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.mainContainerLogin{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 60%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputTest{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+
+}
+
+.inputTest input{
+    width: 250px;
+}

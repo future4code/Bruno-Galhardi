@@ -1,20 +1,22 @@
 import React from 'react'
+import { useProtectedPage } from '../../Hooks/useProtectedPage'
 import '../HomePage/HomePage.css'
 
 
 
-const HomePage = () =>{
+const AdmPage = () =>{
     
+    useProtectedPage()
    
     
     return(
         <div className='containerHome'>
             
-           <h1>HomePage</h1>
+           <h1>Admin Page</h1>
                   
         </div>
 
     )
 }
     
-export default HomePage
+export default AdmPage
