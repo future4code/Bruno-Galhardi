@@ -36,6 +36,7 @@ export default function Router() {
           </Route>
 
           <Route exact path={"/trips/create"}>
+            <HeaderAdm/>
             <CreateTripPage />
           </Route>
 

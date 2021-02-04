@@ -11,7 +11,7 @@
 .containerForm{
     display: flex;
     align-items: center;
-    width: 30%;
+    width: 500px;
     flex-direction: column;
     background-color: #e6ecff;
     height: 300px;
