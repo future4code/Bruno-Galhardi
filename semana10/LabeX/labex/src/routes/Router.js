@@ -10,6 +10,7 @@ import AdmPage from '../Pages/AdmPage/AdmPage'
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Header from '../Components/Header/Header'
 import HeaderAdm from '../Components/HeaderAdm/HeaderAdm'
+import HeaderForm from '../Components/HeaderForm/HeaderForm'
     
 
 export default function Router() {
@@ -30,6 +31,7 @@ export default function Router() {
           </Route>
 
           <Route exact path={"/application-form"}>
+            <HeaderForm/>
             <FormPage />
           </Route>
 
