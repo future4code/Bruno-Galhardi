@@ -47,7 +47,7 @@ const FormPage = () => {
      alert('Sucesso ')
     })
     .catch((err) =>{
-      alert("Não foi dessa vez,trouxa")
+      alert("erro ao se cadastrar")
     })
     
   }

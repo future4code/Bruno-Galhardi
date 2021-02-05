@@ -41,6 +41,7 @@ export default function Router() {
           </Route>
 
           <Route exact path={"/trips/list"}>
+            <HeaderAdm/>
             <ListTripsPage />
           </Route>
 

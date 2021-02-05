@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 /* import { useHistory } from 'react-router-dom' */
 import axios from "axios";
 import useForm from '../../Hooks/useForm'
-import '../FormPage/FormPage.css'
+import '../CreateTripPage/CreateTripPage.css'
 
 const CreateTripPage = () => {
   /* const history = useHistory(); */
@@ -34,12 +34,12 @@ const onClickButton = (event)=>{
 
 
   return (
-    <div className='mainContainerForm'>
+    <div className='mainContainerCreateTrip'>
       <h1>Criar viagem:</h1>
-        <div className='containerForm'>
+        <div className='containerCreateTrip'>
             <form onSubmit={onClickButton}>
-              <div className='boxForm'>
-                <input
+              <div className='boxCreateTrip'>
+                <input className='boxCreateTripinput'
                   name="name"
                   value={form.name}
                   onChange={onChange}
@@ -50,37 +50,38 @@ const onClickButton = (event)=>{
                 />
               </div>
               
-              <div className='boxForm'>
-                <input
-                  name="date"
+              <div className='boxCreateTrip'>
+                <input className='boxCreateTripinput'
+                  name={"date"}
                   value={form.date}
                   onChange={onChange}
                   placeholder={"Data do inicio da missão"}
                   required
-                  type="date"
+                  type={"date"}
+                  min={"2021-01-01"}                            
                 />
               </div>
-              <div className='boxForm'>
-                <input
+              <div className='boxCreateTrip'>
+                <input className='boxCreateTripinput'
                   name="description"
                   value={form.description}
                   onChange={onChange}
                   placeholder={"Descrição da missão"}
                   required
-                  type="text"
+                  type="text"                  
                 />
               </div>
-              <div className='boxForm'>
-                <input
+              <div className='boxCreateTrip'>
+                <input className='boxCreateTripinput'
                   name="durationInDays"
                   value={form.durationInDays}
                   onChange={onChange}
-                  placeholder={"Duração da missao em dias"}
+                  placeholder={"Duração da missão em dias"}
                   required
                   type="text"
                 />
               </div>
-              <div className='boxForm'>
+              <div className='boxCreateTrip'>
                 <select value={form.planet} name ='planet' onChange={onChange}>
                   {listPlanet.map((planet) =>{
                     return(
