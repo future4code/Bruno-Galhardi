@@ -9,6 +9,9 @@ const ListTripsPage = () => {
   const [listTrips, setListTrips] = useState ()
   const [tripsDetails, setTripsDetails] = useState ({})
   const [goToDetails, setGoToDetails] = useState(false)
+  const [aprovados, setAprovados] = useState({})
+  const [candidato, setCandidato] =useState()
+  const [ids, setIds] = useState()
  
   useEffect(()=>{
     getTrips()
@@ -44,6 +47,25 @@ const ListTripsPage = () => {
     alert("Não foi possível exibir os detalhes")      
     })
   }
+
+  const approved = (approved,id) =>{
+    const body = {
+      approve: true
+    } 
+    axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/bruno-vallim-epps/trips/${candidato.tripid}/candidates/${id}/decide`,body,{
+      headers: {auth: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBubXdySGdEZFJLRzRqbkdzWVJoIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2MTI0NzI1NjF9.1vAMJ4Fy5ZSUfQPOdh7Q4vqPBG5GK76dFMy74eZT7qk"}
+    })
+    .then((res) =>{
+      getTripsDetails()
+    })
+    .catch((err) =>{
+      
+    }) 
+  }
+  
+  
+
+
   const tripDetailsList = listTrips && <>{listTrips.map((trip) =>{
     
     return(
