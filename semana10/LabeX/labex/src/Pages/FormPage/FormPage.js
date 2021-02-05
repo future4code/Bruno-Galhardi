@@ -87,6 +87,7 @@ const FormPage = () => {
                   placeholder={"Motivos para ir?"}
                   required
                   type="text"
+                  pattern={"^.{30,}"}
                 />
               </div>
               <div className='boxForm'>
@@ -97,6 +98,7 @@ const FormPage = () => {
                   placeholder={"Profissão"}
                   required
                   type="text"
+                  pattern={"^.{3,}"}
                 />
               </div>
               <div className='boxForm'>

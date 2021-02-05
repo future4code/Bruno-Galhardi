@@ -45,8 +45,8 @@ const onClickButton = (event)=>{
                   onChange={onChange}
                   placeholder={"Nome da missão"}
                   required
-                  pattern={"^.{3,}"}
-                  title={"O nome deve ter no mínimo 3 caracteres"}
+                  pattern={"^.{5,}"}
+                  title={"O nome deve ter no mínimo 5 caracteres"}
                 />
               </div>
               
@@ -68,7 +68,9 @@ const onClickButton = (event)=>{
                   onChange={onChange}
                   placeholder={"Descrição da missão"}
                   required
-                  type="text"                  
+                  type="text" 
+                  pattern={"^.{5,}"}
+                  title={"Descrição deve ter no mínimo 30 caracteres"}                 
                 />
               </div>
               <div className='boxCreateTrip'>
@@ -79,6 +81,8 @@ const onClickButton = (event)=>{
                   placeholder={"Duração da missão em dias"}
                   required
                   type="text"
+                  pattern={"^.{50,}"}
+                  title={"A duração da missão deve ter no mínimo 50 dias"}
                 />
               </div>
               <div className='boxCreateTrip'>

@@ -20,7 +20,7 @@ const Header = () => {
       <div className='btnNav'>
         
         <button onClick={() => goToPage(history, "/trips/list" )}>Viagens</button>
-        <button onClick={() => goToPage(history, "/trips/details" )}>Detalhes das viagens</button>
+        {/* <button onClick={() => goToPage(history, "/trips/details" )}>Detalhes das viagens</button> */}
         <button onClick={() => goToPage(history, "/trips/create" )}>Criar viagens</button>
         <button onClick={logout}>Logout</button>
         

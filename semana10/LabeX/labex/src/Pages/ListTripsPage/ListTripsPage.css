@@ -8,12 +8,25 @@
 
 .containerListTrips {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 600px;
   flex-direction: column;
   background-color: #e6ecff;
-  height: 400px;
+  height: 550px;
   justify-content: center;
+  padding-left: 40px;
+}
+
+.boxMission{
+  display: flex;
+  align-items: center;
+  width: 350px;
+  flex-direction: column;
+  background-color: #e6ecff;
+  height: 50px;
+  justify-content: center;
+  padding-top: auto;
+
 }
 
 .boxListTrips {

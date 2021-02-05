@@ -1,13 +1,17 @@
-import React from "react";
-import { goToPage } from "../../routes/Coordinator";
+import React, {useState, useEffect} from "react";
 import { useHistory } from 'react-router-dom'
+import '../ListTripsPage/ListTripsPage.css'
+import axios from 'axios'
+import {goToPage} from '../../routes/Coordinator'
 
 const TripDetailsPage = () => {
-  const history = useHistory();
+  
 
   return (
     <div>
+      
       <h1>Trip Details Page</h1>
+
       
     </div>
   );
