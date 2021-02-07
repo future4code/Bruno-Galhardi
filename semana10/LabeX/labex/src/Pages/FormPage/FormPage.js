@@ -18,12 +18,14 @@ const FormPage = () => {
 
   const [trips, setTrips] = useState ()
   const [idTrip, setIdTrip] = useState()
+  const [country, setCountry] = useState()
 
   const onChangeTrips = (e) =>{
       setIdTrip(e.target.value)
   }
 
   useEffect(()=>{
+    getCountry()
     getTrips()
   },[])
   
@@ -32,6 +34,17 @@ const FormPage = () => {
     .then((res) =>{
       setTrips(res.data.trips)
       console.log(res)
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
+
+  const getCountry = () =>{
+    axios.get('https://restcountries.eu/rest/v2/all')
+    .then((res) =>{
+      setCountry(res.data)
+      console.log("Paises",res)
     })
     .catch((err)=>{
       console.log(err)
@@ -101,16 +114,7 @@ const FormPage = () => {
                   pattern={"^.{3,}"}
                 />
               </div>
-              <div className='boxForm'>
-                <input
-                  name="country"
-                  value={form.country}
-                  onChange={onChange}
-                  placeholder={"País"}
-                  required
-                  type="text"
-                />
-              </div>
+                            
               <div className='boxForm'>
 
                 <select
@@ -125,6 +129,22 @@ const FormPage = () => {
                   })}</> }  
                 </select>
               </div>
+
+              <div className='boxForm'>
+
+                <select
+                  name='country'
+                  onChange={onChangeTrips}
+                  value={form.country}                   
+                >
+                  {country && <>{country.map((country)=>{
+                    return(
+                      <option value={country.name}> {country.name} </option>
+                    )
+                  })}</> }
+                </select>
+              </div>
+
 
               <button>Aplicar a viagem</button>
         

@@ -11,11 +11,12 @@ const ListTripsPage = () => {
   const [goToDetails, setGoToDetails] = useState(false)
   const [aprovados, setAprovados] = useState({})
   const [candidato, setCandidato] =useState()
-  const [ids, setIds] = useState()
+  const [tripId, setTripId] = useState()
  
   useEffect(()=>{
     getTrips()
   },[])
+  console.log("Candidatos",tripsDetails.candidates)
 
   const goToListTrip = () =>{
     setGoToDetails(false)
@@ -38,32 +39,53 @@ const ListTripsPage = () => {
       headers: {auth: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBubXdySGdEZFJLRzRqbkdzWVJoIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2MTI0NzI1NjF9.1vAMJ4Fy5ZSUfQPOdh7Q4vqPBG5GK76dFMy74eZT7qk"}
     })
     .then((res) =>{
-      alert('Sucesso ao abrir os detalhes')
+      
       setTripsDetails(res.data.trip)
       setGoToDetails(true)
-      
+      setTripId(tripId)     
     })
-    .catch((err)=>{
-    alert("Não foi possível exibir os detalhes")      
+    .catch((err)=>{         
     })
   }
 
-  const approved = (approved,id) =>{
+  const approved = (candidatoid, value) =>{
     const body = {
-      approve: true
+      approve: value
     } 
-    axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/bruno-vallim-epps/trips/${candidato.tripid}/candidates/${id}/decide`,body,{
+    axios.put(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/bruno-vallim-epps/trips/${tripId}/candidates/${candidatoid}/decide`,body,{
       headers: {auth: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBubXdySGdEZFJLRzRqbkdzWVJoIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2MTI0NzI1NjF9.1vAMJ4Fy5ZSUfQPOdh7Q4vqPBG5GK76dFMy74eZT7qk"}
     })
     .then((res) =>{
-      getTripsDetails()
+      getTripsDetails(tripId)
+      if(value){
+        alert("Candidato aprovado, boa sorte")
+      } else{
+        alert("Candidato Reprovado")
+      }
+      
     })
     .catch((err) =>{
       
     }) 
   }
+
+  const candidates = tripsDetails.candidates &&  tripsDetails.candidates.map((candidato)=>{
+    return(
+      <div>
+        <p>{candidato.name}</p>
+        <button onClick={() => approved(candidato.id, true)}>Aprovado</button>
+        <button onClick={() => approved(candidato.id, false)}>Reprovado</button>
+      </div>
+    )
+  })
   
-  
+   const approvedCandidate =  tripsDetails.approved && tripsDetails.approved.map((candidato)=>{
+     return(
+       <div>
+         <p>{candidato.name}</p>
+       </div>
+     )
+   })
 
 
   const tripDetailsList = listTrips && <>{listTrips.map((trip) =>{
@@ -123,6 +145,13 @@ const ListTripsPage = () => {
           </>
         }
       </div>
+      <div>
+        {candidates}
+        </div>
+
+        <div>
+          {/* {approvedCandidate} */}
+        </div>
           
     </div>
   )}; 
