@@ -1,0 +1,48 @@
+.mainContainerListTrips {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerListTrips {
+  display: flex;
+  align-items: flex-start;
+  width: 600px;
+  flex-direction: column;
+  background-color: #e6ecff;
+  height: 550px;
+  justify-content: center;
+  padding-left: 40px;
+}
+
+.boxMission{
+  display: flex;
+  align-items: center;
+  width: 350px;
+  flex-direction: column;
+  background-color: #e6ecff;
+  height: 50px;
+  justify-content: center;
+  padding-top: auto;
+
+}
+
+.boxListTrips {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  background-color: #e6ecff;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.boxListTrips button {
+  display: flex;
+  flex-direction: column;
+}
+
+button:hover {
+  background-color: #73DDFF;
+}

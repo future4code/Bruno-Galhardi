@@ -1,0 +1,22 @@
+.mainContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #809dff;
+}
+
+.logo{
+    width: 20%;
+    margin-left: 50px;
+}
+
+.logoBtn{
+    cursor: pointer;
+}
+
+.btnNav{
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+}

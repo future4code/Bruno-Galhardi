@@ -1,9 +1,10 @@
 import React from "react";
-import '../Header/Header.css'
+import '../HeaderForm/HeaderForm.css'
 import {goToPage} from '../../routes/Coordinator'
 import { useHistory, useParams } from 'react-router-dom'
 
-const Header = () => {
+
+const HeaderForm = () => {
   const history = useHistory()
 
   return (
@@ -13,7 +14,7 @@ const Header = () => {
       </div>
 
       <div className='btnNav'>
-        <button onClick={() => goToPage(history, "/application-form" )}>Inscrever-se</button>
+    
         <button onClick={() => goToPage(history, "/login" )}>Login</button>
         
       </div>
@@ -22,4 +23,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderForm;

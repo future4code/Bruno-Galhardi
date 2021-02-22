@@ -1,0 +1,36 @@
+
+.mainContainerLogin{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+.containerLogin{
+    display: flex;
+    align-items: center;
+    width: 30%;
+    flex-direction: column;
+    background-color: #e6ecff;
+    height: 300px;
+    justify-content: center;
+   
+}
+
+.boxLogin{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    background-color: #e6ecff;
+    align-items: center;
+    margin: 10px 0;
+    
+}
+
+.boxLogin input{
+    width: 250px;
+    height: 18px;
+}
