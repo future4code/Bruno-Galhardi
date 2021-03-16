@@ -1,0 +1,13 @@
+{
+  "name": "aula40",
+  "version": "1.0.0",
+  "description": "atividade aula 40",
+  "main": "index.js",
+  "scripts": {
+    "start":"node ./index.js",
+    "start2":"node ./index2.js",
+    "start3":"node ./index3.js"
+  },
+  "author": "Bruno Vallim",
+  "license": "ISC"
+}
