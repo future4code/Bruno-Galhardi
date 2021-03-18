@@ -104,14 +104,71 @@ app.put("/users/edit/:id", (req:Request, res: Response)=>{
 
     try {
 
-        const findUser: user | undefined = users.find(
-            user => user.id === Number(req.params.id))       
-            
-    } 
+        const findUser: number  = users.findIndex(
+            user => user.id === Number(req.params.id))
+        if(findUser === -1){
+            errorCode = 404
+            throw new Error('Not found user')
+        }
+        if(!req.body.name){
+            throw new Error("Invalid Parameters")
+        } else{
+            users[findUser].name = req.body.name
+        }
+        res.status(200).send("user successfully update")
+    }
     catch (error) {
         res.status(errorCode).send({message: error.message})
     }
     
+})
+
+//Ex6
+app.patch("/users/edit/:id", (req:Request, res: Response)=>{
+    let errorCode:number = 400
+
+    try {
+
+        const findUser: number  = users.findIndex(
+            user => user.id === Number(req.params.id))
+        if(findUser === -1){
+            errorCode = 404
+            throw new Error('Not found user')
+        }
+        if(!req.body.name){
+            throw new Error("Invalid Parameters")
+        } else{
+            users[findUser].name = req.body.name
+        }
+        res.status(200).send("user successfully update")
+    }
+    catch (error) {
+        res.status(errorCode).send({message: error.message})
+    }
+    
+})
+
+//Ex7
+app.delete("/users/delete/:id", (req:Request, res: Response)=>{
+    let errorCode:number = 400
+    try {
+        const findUser: number  = users.findIndex(
+            user => user.id === Number(req.params.id))
+
+        if(findUser === -1){
+            errorCode = 404
+            throw new Error('Not found user')
+        }
+        if(req.params.id){
+            users.splice(findUser, 1)
+        } else{
+            throw new Error("Invalid Parameters")
+        }
+        res.status(200).send({message:'user removed successfully'})
+        
+    } catch (error) {
+        
+    }
 })
 
 
