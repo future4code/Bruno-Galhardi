@@ -1,0 +1,25 @@
+POST http://localhost:3003/actor
+Content-Type: application/json
+
+{
+    "name":"Regina Casé",
+    "salary":180000,
+    "birthDate":"1953-04-26",
+    "gender":"female"
+}
+
+###
+
+PUT http://localhost:3003/actor/001
+Content-Type: application/json
+
+{   
+    
+    "salary": 750000
+}
+
+###
+DELETE http://localhost:3003/actor/1616623528665
+
+###
+GET http://localhost:3003/actor/avg/gender?gender=male
