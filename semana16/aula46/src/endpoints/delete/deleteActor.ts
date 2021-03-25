@@ -6,12 +6,12 @@ const deleteActor = async (req: Request, res: Response) => {
    try {
 
       const result = await connection("Actor")
-         .avg()
+         .delete()
          .where({
-            gender: req.params.gender
+            id: req.params.id
          })
 
-     return result [0].average;
+     res.send({message:"Actor delete sucessfully"});
 
    } catch (error) {
       console.log(error.message)

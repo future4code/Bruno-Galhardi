@@ -6,17 +6,14 @@ const updateActor = async (req: Request, res: Response) => {
    try {
 
       await connection("Actor")
-         .update({
-            name: req.body.name,
+         .update({            
             salary: req.body.salary,
-            birth_date: req.body.birthDate,
-            gender: req.body.gender
          })
          .where({
-            id: req.params.id
+            id: req.body.id
          })
 
-      res.end()
+      res.end("Actor Update sucessfully")
 
    } catch (error) {
       console.log(error.message)

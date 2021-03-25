@@ -1,18 +1,18 @@
 import connection from "../../connection"
 import { Request, Response } from 'express'
 
-
-const getAvgActor = async (
+const getActorByGender = async (
     req: Request,
     res: Response
  ): Promise<void> => {
     try {
-         
-        const result = await connection("Actor")
-        .avg("salary as average")
-        .where({ gender: req.query.gender });
-
-        res.send(`USD ${result[0].average.toFixed(2)}`);
+ 
+        const result = await connection.raw(`
+           SELECT COUNT(*) as Count FROM Actor
+           WHERE gender = "${req.query.gender}"  
+           `)
+ 
+       res.send(result[0][0])
  
     } catch (error) {
        console.log(error.message)
@@ -20,4 +20,4 @@ const getAvgActor = async (
     }
  }
  
- export default getAvgActor;
+ export default getActorByGender;
