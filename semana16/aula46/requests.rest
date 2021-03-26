@@ -1,0 +1,28 @@
+POST http://localhost:3003/actor
+Content-Type: application/json
+
+{
+    "name":"Dalton Vigh",
+    "salary":10000,
+    "birthDate":"1971-04-26",
+    "gender":"male"
+}
+
+###
+
+POST http://localhost:3003/actor/update
+Content-Type: application/json
+
+{   
+    "id":"001",
+    "salary": 770000
+}
+
+###
+DELETE http://localhost:3003/actor/delete/1616680820744
+
+###
+GET http://localhost:3003/actor/avg?gender=male
+
+###
+GET http://localhost:3003/actor/gender?gender=male
