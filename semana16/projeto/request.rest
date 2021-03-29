@@ -1,0 +1,36 @@
+PUT http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name":"Usuário Dois",
+    "nickname":"Doiszinho",
+    "email":"usuario2@gmail.com" 
+}
+
+###
+GET http://localhost:3003/user/3
+
+###
+POST http://localhost:3003/user/edit/2
+Content-Type: application/json
+
+{
+    "name":"Usuário Dois",
+    "nickname":"Doiszinho",
+    "email":"usuario2@gmail.com"
+}
+
+###
+PUT http://localhost:3003/task
+Content-Type: application/json
+
+{
+    "title":"Lavar o cabelo",
+    "description":"Lavar o carango",
+    "limitDate":"30/03/2021",
+    "status":"to_do",
+    "creatorUserId":2
+}
+
+###
+GET http://localhost:3003/task/1
