@@ -1,0 +1,12 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name":"Amigo do povo",
+    "nickname":"Russomano",
+    "email":"russomano@gmail.com",
+    "password":"123"
+}
+
+###
+GET http://localhost:3003/user/email
