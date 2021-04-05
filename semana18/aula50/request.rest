@@ -9,4 +9,4 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3003/user/email
+GET http://localhost:3003/user/bruno@gmail.com
