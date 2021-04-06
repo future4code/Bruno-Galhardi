@@ -1,0 +1,27 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name":"Guarana Dolly",
+    "nickname":"Dollynho seu amiguinho",
+    "email":"dollyguarana@gmail.com",
+    "password":"7894565"
+}
+
+###
+GET http://localhost:3003/user/bruno@gmail.com
+
+###
+# @name login
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email":"bruno@gmail.com",
+    "password":"123456"
+}
+
+###
+@token = {{login.response.body.token}}
+GET http://localhost:3003/user/profile
+Authorization: {{token}}
