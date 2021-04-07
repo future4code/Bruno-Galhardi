@@ -4,13 +4,13 @@ export type user = {
     nickname:string,
     email:string,
     password:string,
-    role: userRole
+    role: string
 
 }
 
 export enum userRole {
     ADMIN = "admin",
-    NORMAL = "normal",
+    NORMAL = "normal"
 }
 
 export type AuthenticationData = {

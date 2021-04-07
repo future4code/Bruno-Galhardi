@@ -2,10 +2,11 @@ POST http://localhost:3003/user/create
 Content-Type: application/json
 
 {
-    "name":"Guarana Dolly",
-    "nickname":"Dollynho seu amiguinho",
-    "email":"dollyguarana@gmail.com",
-    "password":"7894565"
+    "name":"Pessoa3",
+    "nickname":"tres",
+    "email":"pessoa3@gmail.com",
+    "password":"123456",
+    "role":"normal"
 }
 
 ###
@@ -17,7 +18,7 @@ POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-    "email":"bruno@gmail.com",
+    "email":"pessoa3@gmail.com",
     "password":"123456"
 }
 

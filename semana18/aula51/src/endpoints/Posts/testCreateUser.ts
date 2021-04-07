@@ -38,8 +38,9 @@ export default async function testCreateUser(
 
       await connection('User')
          .insert(newUser)
-
-      const token: string = generateToken({ id, role })
+      console.log(role)
+      console.log(id)
+      const token = generateToken({ id, role })
 
       res.status(201).send({ token })
 

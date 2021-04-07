@@ -7,7 +7,7 @@ const getData = (token: string): AuthenticationData => {
 
   const result = {
     id: payload.id,
-    role:payload.role
+    role: payload.role
   };
 
   return result;

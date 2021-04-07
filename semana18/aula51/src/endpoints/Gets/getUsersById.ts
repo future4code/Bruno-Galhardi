@@ -9,6 +9,13 @@ const getUserById = async(req: Request, res: Response) : Promise<void> =>{
         
         const authenticationData = getData(token)
         
+        if(authenticationData.role !== "normal"){
+            console.log(authenticationData)
+            throw new Error("Only a normal user can acess this funcionality")
+
+        }
+
+
         const result = await connection.raw(`
         SELECT * FROM User
         WHERE id = "${authenticationData.id}"       

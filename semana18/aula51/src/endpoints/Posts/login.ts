@@ -24,12 +24,12 @@ const login = async (
             WHERE email = "${userLogin.email}"
         `)
 
-        const token: string = generateToken(user[0][0].id)
+        const token = generateToken({id:user[0][0].id, role:user[0][0].role})
         
 
         if(!userLogin.password || userLogin.password.length < 6) throw new Error('a senha deve conter no minimo 6 caracteres')
  
-        const hashCompare = await compare(userLogin.password, userLogin.password);
+        const hashCompare = await compare(userLogin.password, user[0][0].password);
         if(!hashCompare){
          res.statusCode = 401;
          throw new Error("Senha Incorreta");
