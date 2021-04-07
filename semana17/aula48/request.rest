@@ -1,0 +1,7 @@
+GET http://localhost:3003/users?name=caio
+
+###
+GET http://localhost:3003/users/cx
+
+###
+GET http://localhost:3003/users/order?type=CX&direction=ASC
