@@ -23,15 +23,15 @@ export class PostDatabase extends BaseDatabase {
          })
    }
 
-   /* async getTaskById(id: string): Promise<any> {
+   async getPostById(id: string): Promise<any> {
       const result = await BaseDatabase.connection.raw(`
-             SELECT tasks.*, nickname FROM to_do_list_tasks AS tasks
-             JOIN to_do_list_users AS users
-             ON author_id = users.id
-             WHERE tasks.id = '${id}';
+             SELECT id.*, id FROM labook_posts AS id
+             JOIN labook_users AS users
+             ON authorId = users.id
+             WHERE post.id = '${id}';
          `)
 
       return result[0][0]
-   } */
+   }
 
 }
