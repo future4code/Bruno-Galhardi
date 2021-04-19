@@ -1,0 +1,48 @@
+
+
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "Aluno Um",
+   "email": "aluno1@gmail.com",
+   "password": "123456"
+}
+
+###
+# @name login
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email":"aluno1@gmail.com",
+    "password":"123456"
+}
+
+###
+@token = {{login.response.body.token}}
+GET http://localhost:3003/user/profile
+Authorization: {{token}}
+
+###
+@token = {{login.response.body.token}}
+GET http://localhost:3003/user/1cb7377c-0e6f-49e5-9cd2-c8451411ae0d
+Authorization: {{token}}
+
+
+###
+@token = {{login.response.body.token}}
+POST http://localhost:3003/recipe
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "title":"Pão de queijo",
+    "description":"Pegue o queijo parmesão direto do calcanhar de Aquiles"
+}
+
+###
+@token = {{login.response.body.token}}
+GET http://localhost:3003/recipe/17338ee0-87ce-40fd-b38f-2b46a871a5dc
+Authorization: {{token}}
