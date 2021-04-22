@@ -1,0 +1,31 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name":"bruno Vallim",
+    "email":"bruno@gmail.com",
+    "password":"123456"
+}
+
+###
+# @name login
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email":"bruno@gmail.com",
+    "password":"123456"
+}
+
+###
+@token = {{login.response.body.token}}
+POST http://localhost:3003/post/create
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "photo":"Cachurros",
+    "description":"Cachurros deliciosos",
+    "type":"event"
+}
+
