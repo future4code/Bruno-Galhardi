@@ -13,8 +13,16 @@ export class UserDatabase {
    }
 
    public async getUserById(id: string): Promise<User | undefined> {
-      return id !== "id" ? normalUserMock : undefined
-   }
+      /* return id !== "id" ? normalUserMock : undefined */
+      if(id === "id"){
+         return normalUserMock
+      } else if(id !== "id"){
+         return undefined
+      } else{
+         undefined
+      }
+      
+   } 
 
    public async getAllUsers(): Promise<User[]> {
       return [normalUserMock, adminUserMock]

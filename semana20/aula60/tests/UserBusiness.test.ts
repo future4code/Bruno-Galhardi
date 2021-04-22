@@ -5,6 +5,7 @@ import hashGeneratorMock from "./mocks/hashGeneratorMock"
 import idGeneratorMock from "./mocks/idGeneratorMock"
 import tokenGeneratorMock from "./mocks/tokenGeneratorMock"
 import userDatabaseMock from "./mocks/UserDatabaseMock"
+import { normalUserMock } from "./mocks/userMocks"
 
 const userBusiness = new UserBusiness(
    idGeneratorMock,
@@ -134,7 +135,7 @@ describe("getUserById", () =>{
       expect.assertions(2)
       try {
          await userBusiness.getUserById(
-            "id"
+            "dhuasdu"
          )
       } catch (error) {
          expect(error.statusCode).toBe(401)
@@ -142,26 +143,23 @@ describe("getUserById", () =>{
       }
    })
 
-   test("Success", async () =>{
+   test("getUserById Success", async () =>{
 
       expect.assertions(1)
-     
-         const user  = await userBusiness.getUserById("id")
+      try {
+         const user = normalUserMock
+         const result = await userBusiness.getUserById("id")
+
+         expect(user).toBe(result)
          
-         expect(getUserById).toHaveBeenCalledWith("id")
-         expect(user).toEqual({
-            id:"id",
-            name:"Astrodev",
-            email:"astrodev@gmail.com",
-            role: USER_ROLES.ADMIN
-         })
+      } catch (error) {
+         
+      }
 
              
    })
    
 
 })
-function getUserById(getUserById: any) {
-   throw new Error("Function not implemented.")
-}
+
 
